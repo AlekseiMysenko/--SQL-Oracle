@@ -43,7 +43,7 @@ FROM subject;
 SELECT DISTINCT mark FROM exam_marks;
 ~~~~
 
-### Рузультат
+### Результат
 
 |MARK|
 |----|
@@ -97,3 +97,6 @@ SELECT subj_name FROM SUBJECT WHERE HOUR > 30
 |Программирование на Assembler|
 |Программирование на языках высокого уровня|
 |Разработка хранилищ данных|
+
+
+

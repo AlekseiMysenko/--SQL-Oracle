@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='Cp1251'>
+  
+  <title>Responsive Table</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <style>
+  * { 
+    margin: 0; 
+    padding: 0; 
+  }
+  body { 
+    font: 14px/1.4 Georgia, Serif; 
+  }
+  
+  /* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #9B9B9B; 
+    text-align: left; 
+  }
+  @media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute;top: -9999px;left: -9999px;}
+    tr { border: 1px solid #9B9B9B; }
+    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
+    
+    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
+    
+    /*
+    Label the data
+    */
+td:nth-of-type(0):before { content: "Идентификатор (номер)"; }
+td:nth-of-type(1):before { content: "Наименование"; }
+td:nth-of-type(2):before { content: "Семестр"; }
+td:nth-of-type(3):before { content: "Часы"; }
+  }
+  
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    body { 
+      padding: 0; 
+      margin: 0; 
+      width: 320px; }
+    }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body { 
+      width: 495px; 
+    }
+  }
+  
+  </style>
+  <!--<![endif]-->
+<script type="text/javascript">
+
+lsearch = function(){
+  //this.term = document.getElementById('S').value.toUpperCase();
+  var s = document.getElementById('search').value.toLowerCase();
+  rows = document.getElementById('data').getElementsByTagName('TR');
+  for(var i=0;i<rows.length;i++){
+    if (s =="" ){
+      rows[i].style.display ='';
+    } else if ( rows[i].innerText.toLowerCase().indexOf(s) != -1 ) {
+      rows[i].style.display ='';
+    } else {
+      rows[i].style.display ='none';
+    }
+  }
+  this.time = false;
+}
+
+</script>
+</head>
+
+<body>
+<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="lsearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
+<table><thead><tr>	<th>Идентификатор (номер)</th>
+	<th>Наименование</th>
+	<th>Семестр</th>
+	<th>Часы</th>
+</tr></thead>
+<tbody id="data">
+
+	<tr>
+<td align="right">1</td>
+<td>Основы теория права</td>
+<td align="right">4</td>
+<td align="right">50</td>
+	</tr>
+	<tr>
+<td align="right">2</td>
+<td>Экология</td>
+<td align="right">3</td>
+<td align="right">20</td>
+	</tr>
+	<tr>
+<td align="right">3</td>
+<td>Философия</td>
+<td align="right">3</td>
+<td align="right">27</td>
+	</tr>
+	<tr>
+<td align="right">4</td>
+<td>Математический анализ</td>
+<td align="right">2</td>
+<td align="right">75</td>
+	</tr>
+	<tr>
+<td align="right">5</td>
+<td>Русский язык</td>
+<td align="right">1</td>
+<td align="right">36</td>
+	</tr>
+	<tr>
+<td align="right">6</td>
+<td>Реляционная алгебра</td>
+<td align="right">2</td>
+<td align="right">20</td>
+	</tr>
+	<tr>
+<td align="right">7</td>
+<td>Статистика</td>
+<td align="right">3</td>
+<td align="right">27</td>
+	</tr>
+	<tr>
+<td align="right">8</td>
+<td>Физика</td>
+<td align="right">3</td>
+<td align="right">24</td>
+	</tr>
+	<tr>
+<td align="right">9</td>
+<td>Физическая культура</td>
+<td align="right">1</td>
+<td align="right">87</td>
+	</tr>
+	<tr>
+<td align="right">10</td>
+<td>Информационные системы</td>
+<td align="right">3</td>
+<td align="right">37</td>
+	</tr>
+	<tr>
+<td align="right">11</td>
+<td>Информатика на предприятии</td>
+<td align="right">4</td>
+<td align="right">21</td>
+	</tr>
+	<tr>
+<td align="right">12</td>
+<td>Введение в базы данных</td>
+<td align="right">2</td>
+<td align="right">23</td>
+	</tr>
+	<tr>
+<td align="right">13</td>
+<td>Программирование на Assembler</td>
+<td align="right">3</td>
+<td align="right">45</td>
+	</tr>
+	<tr>
+<td align="right">14</td>
+<td>Программирование на языках высокого уровня</td>
+<td align="right">4</td>
+<td align="right">58</td>
+	</tr>
+	<tr>
+<td align="right">15</td>
+<td>Разработка хранилищ данных</td>
+<td align="right">5</td>
+<td align="right">66</td>
+	</tr>
+</tbody></table><!-- SQL:
+SELECT subj_id "Идентификатор (номер)", subj_name "Наименование", semester "Семестр",hour "Часы"
+FROM subject--></body></html>
